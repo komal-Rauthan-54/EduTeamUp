@@ -1,0 +1,736 @@
+ed content
+17.03 KB •732 lines
+•
+Formatting may be inconsistent from source
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEHU Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://d.gehu.ac.in/uploads/image/cnDchKie-gehu-dehradun-jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* === Sophisticated Subtle Overlay === */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 32, 63, 0.4) 0%,
+    rgba(44, 62, 80, 0.35) 30%,
+    rgba(52, 73, 94, 0.3) 60%,
+    rgba(31, 58, 84, 0.4) 100%
+  );
+  animation: subtleShift 12s ease-in-out infinite alternate;
+}
+
+/* === Gentle Color Animation === */
+@keyframes subtleShift {
+  0% {
+    background: linear-gradient(
+      135deg,
+      rgba(15, 32, 63, 0.4) 0%,
+      rgba(44, 62, 80, 0.35) 50%,
+      rgba(31, 58, 84, 0.4) 100%
+    );
+  }
+  50% {
+    background: linear-gradient(
+      225deg,
+      rgba(25, 42, 86, 0.35) 0%,
+      rgba(41, 50, 79, 0.4) 50%,
+      rgba(35, 47, 68, 0.35) 100%
+    );
+  }
+  100% {
+    background: linear-gradient(
+      315deg,
+      rgba(34, 47, 62, 0.4) 0%,
+      rgba(47, 54, 74, 0.35) 50%,
+      rgba(28, 45, 75, 0.4) 100%
+    );
+  }
+}
+
+/* === Elegant Header with Refined Backdrop === */
+header {
+  position: relative;
+  z-index: 10;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    rgba(31, 58, 84, 0.25) 0%,
+    rgba(44, 62, 80, 0.2) 50%,
+    rgba(52, 73, 94, 0.25) 100%
+  );
+  backdrop-filter: blur(20px) saturate(1.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  margin: 0 0 15px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #c82333, #bd2130);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(220, 53, 69, 0.3);
+}
+
+/* === Main Section === */
+main {
+  position: relative;
+  z-index: 5;
+  padding: 40px 20px 100px 20px;
+  min-height: calc(100vh - 200px);
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 40px 0;
+}
+
+.welcome-section h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
+}
+
+.welcome-section p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #ffffff;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* === User Stats Section === */
+.user-stats {
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.92) 0%, 
+    rgba(248, 250, 252, 0.88) 50%, 
+    rgba(241, 245, 249, 0.92) 100%
+  );
+  padding: 20px 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  text-align: center;
+}
+
+.user-stats .stat-item {
+  display: inline-block;
+  margin: 0 20px;
+  padding: 10px;
+  color: #333;
+}
+
+.user-stats .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff;
+  display: block;
+}
+
+.user-stats .stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* === Joined Teams Section === */
+.joined-teams-section {
+  margin-bottom: 50px;
+}
+
+.joined-teams-section h3 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.joined-teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.joined-team-card {
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(248, 250, 252, 0.9) 100%
+  );
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #28a745;
+  backdrop-filter: blur(10px);
+}
+
+.joined-team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.joined-team-card h4 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.joined-team-card .team-domain {
+  color: #28a745;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.joined-team-card p {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.joined-team-card .team-members {
+  color: #555;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.no-joined-teams {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  font-size: 1.1rem;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* === Dashboard Actions === */
+.dashboard-actions {
+  text-align: center;
+  margin: 40px 0 60px 0;
+}
+
+.action-btn {
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 20px;
+  margin: 20px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn.create {
+  background: linear-gradient(135deg, #28a745, #20c997, #17a2b8);
+  box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
+}
+
+.action-btn.join {
+  background: linear-gradient(135deg, #007bff, #0056b3, #004085);
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
+}
+
+.action-btn.disabled {
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.8s ease;
+}
+
+.action-btn:hover::before {
+  left: 100%;
+}
+
+.action-btn:hover:not(.disabled) {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* === Content Container === */
+.content-container {
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.92) 0%, 
+    rgba(248, 250, 252, 0.88) 50%, 
+    rgba(241, 245, 249, 0.92) 100%
+  );
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+
+.content-container.active {
+  display: block;
+}
+
+.content-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+/* === Form Styling === */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input, select, button, textarea {
+  margin: 12px 0;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.form-button {
+  background: linear-gradient(135deg, #d79a28, #f4b942);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.form-button:hover {
+  background: linear-gradient(135deg, #c28620, #e6a833);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* === Team Cards === */
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #007bff;
+}
+
+.team-card.already-joined {
+  border-left-color: #6c757d;
+  opacity: 0.7;
+}
+
+.team-card:hover:not(.already-joined) {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.team-card h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.team-card .team-domain {
+  color: #007bff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.team-card p {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.team-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.members-count {
+  font-weight: 600;
+}
+
+.fill-percentage {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.team-join-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.team-join-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.team-join-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.team-join-btn.already-joined {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.back-btn {
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, #5a6268, #495057);
+  transform: translateY(-2px);
+}
+
+.no-teams {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 40px;
+  font-size: 1.1rem;
+}
+
+/* === Success Message === */
+.success-message {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  color: #155724;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #c3e6cb;
+}
+
+/* === Team Limit Warning === */
+.team-limit-warning {
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  color: #856404;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #ffeaa7;
+}
+
+/* === Sophisticated Footer === */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(
+    135deg,
+    rgba(51, 65, 85, 0.9) 0%,
+    rgba(71, 85, 105, 0.85) 50%,
+    rgba(100, 116, 139, 0.9) 100%
+  );
+  backdrop-filter: blur(25px) saturate(1.1);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.1);
+  z-index: 15;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+  margin: 0;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  .welcome-section h2 {
+    font-size: 2.2rem;
+  }
+  
+  .welcome-section p {
+    font-size: 1.1rem;
+    padding: 0 20px;
+  }
+  
+  .content-container {
+    margin: 0 20px 40px 20px;
+    padding: 30px 20px;
+  }
+  
+  .action-btn {
+    padding: 16px 32px;
+    font-size: 18px;
+    margin: 10px;
+  }
+  
+  .logout-btn {
+    position: static;
+    margin-top: 15px;
+  }
+  
+  .teams-grid, .joined-teams-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .user-stats .stat-item {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card, .joined-team-card {
+    padding: 20px;
+  }
+  
+  .team-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GEHU Dashboard</h1>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </header>
+    
+    <main>
+        <section class="welcome-section">
+            <h2 id="welcome-message">Welcome!</h2>
+            <p id="user-info">Loading your information...</p>
+        </section>
+        
+        <!-- User Statistics -->
+        <div class="user-stats">
+            <div class="stat-item">
+                <span class="stat-number" id="joined-teams-count">0</span>
+                <span class="stat-label">Teams Joined</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="teams-available">0</span>
+                <span class="stat-label">Teams Available</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="team-slots-remaining">3</span>
+                <span class="stat-label">Slots Remaining</span>
+            </div>
+        </div>
+        
+        <!-- Joined Teams Section -->
+        <section class="joined-teams-section">
+            <h3>Your Teams</h3>
+            <div id="joined-teams-container">
+                <div class="no-joined-teams">
+                    You haven't joined any teams yet. Start by joining a team below! 🚀
+                </div>
+            </div>
+        </section>
+        
+        <div class="dashboard-actions" id="main-actions">
+            <button class="action-btn create" onclick="showCreateTeam()">Create a Team</button>
+            <button class="action-btn join" id="join-team-btn" onclick="showJoinTeam()">Join a Team</button>
+        </div>
+        
+        <!-- Team Limit Warning -->
+        <div id="team-limit-warning" class="team-limit-warning" style="display: none;">
+            🎯 You've reached the maximum limit of 3 teams! You cannot join more teams.
+        </div>
+        
+        <!-- Create Team Form -->
+        <div class="content-container" id="create-team-container">
+            <button class="back-btn" onclick="showMainActions()">← Back to Dashboard</button>
+            <h2>Create a New Team</h2>
+            <form id="create-team-form">
+                <input type="text" id="team-name" placeholder="Team Name" required>
+                <textarea id="team-description" placeholder="Team Description" required></textarea>
+                <input type="number" id="max-members" placeholder="Maximum Members" min="2" max="50" required>
+                <select id="team-domain" required>
+                    <option value="">Select Team Domain</option>
+                    <option value="Computer Science">Computer Science & IT</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Business">Business & Management</option>
+                    <option value="Arts">Arts & Humanities</option>
+                    <option value="Science">Pure Sciences</option>
+                    <option value="Research">Research & Development</option>
+                </select>
+                <button type="submit" class="form-button">Create Team</button>
+            </form>
+            <div id="create-success-message" class="success-message" style="display: none;">
+                Team created successfully! 🎉
+            </div>
+        </div>
+        
+        <!-- Join Team Section -->
+        <div class="content-container" id="join-team-container">
+            <button class="back-btn" onclick="showMainActions()">← Back to Dashboard</button>
+            <h2>Available Teams</h2>
+            <div id="teams-list">
+                <div class="no-teams">Loading teams...</div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2025 Graphics Era Hill University. All Rights Reserved. | Excellence in Education</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

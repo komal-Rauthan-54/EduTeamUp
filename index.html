@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEHU Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://d.gehu.ac.in/uploads/image/cnDchKie-gehu-dehradun-jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* === Sophisticated Subtle Overlay === */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 32, 63, 0.4) 0%,
+    rgba(44, 62, 80, 0.35) 30%,
+    rgba(52, 73, 94, 0.3) 60%,
+    rgba(31, 58, 84, 0.4) 100%
+  );
+  animation: subtleShift 12s ease-in-out infinite alternate;
+}
+
+/* === Gentle Color Animation === */
+@keyframes subtleShift {
+  0% {
+    background: linear-gradient(
+      135deg,
+      rgba(15, 32, 63, 0.4) 0%,
+      rgba(44, 62, 80, 0.35) 50%,
+      rgba(31, 58, 84, 0.4) 100%
+    );
+  }
+  50% {
+    background: linear-gradient(
+      225deg,
+      rgba(25, 42, 86, 0.35) 0%,
+      rgba(41, 50, 79, 0.4) 50%,
+      rgba(35, 47, 68, 0.35) 100%
+    );
+  }
+  100% {
+    background: linear-gradient(
+      315deg,
+      rgba(34, 47, 62, 0.4) 0%,
+      rgba(47, 54, 74, 0.35) 50%,
+      rgba(28, 45, 75, 0.4) 100%
+    );
+  }
+}
+
+/* === Elegant Header with Refined Backdrop === */
+header {
+  position: relative;
+  z-index: 10;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    rgba(31, 58, 84, 0.25) 0%,
+    rgba(44, 62, 80, 0.2) 50%,
+    rgba(52, 73, 94, 0.25) 100%
+  );
+  backdrop-filter: blur(20px) saturate(1.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  margin: 0 0 15px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+header nav {
+  margin-top: 15px;
+}
+
+header nav a {
+  margin: 0 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+header nav a:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(173, 216, 230, 0.1));
+  text-decoration: none;
+  color: #b8daff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 218, 255, 0.2);
+}
+
+/* === Main Section === */
+main {
+  position: relative;
+  z-index: 5;
+  padding: 40px 20px 100px 20px;
+  min-height: calc(100vh - 200px);
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 40px 0;
+}
+
+.hero-section h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
+}
+
+.hero-section p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #ffffff;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* === Button Links === */
+.button-links {
+  text-align: center;
+  margin: 40px 0 60px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 32px;
+  font-size: 18px;
+  margin: 15px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.btn.blue {
+  background: linear-gradient(135deg, #4a6fa5, #5a7fc7, #6989d4);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(74, 111, 165, 0.3);
+}
+
+.btn.blue::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.8s ease;
+}
+
+.btn.blue:hover::before {
+  left: 100%;
+}
+
+.btn.green {
+  background: linear-gradient(135deg, #52796f, #6a9c89, #84a98c);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(82, 121, 111, 0.3);
+}
+
+.btn.green::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.8s ease;
+}
+
+.btn.green:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* === Refined Content Container with Elegant Glass Effect === */
+.main-content {
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.92) 0%, 
+    rgba(248, 250, 252, 0.88) 50%, 
+    rgba(241, 245, 249, 0.92) 100%
+  );
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.3), rgba(203, 213, 225, 0.2));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.main-content h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+/* === Form Styling === */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input, select, button {
+  margin: 12px 0;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+button {
+  background: linear-gradient(135deg, #d79a28, #f4b942);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #c28620, #e6a833);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* === Group Cards === */
+.groups-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.group-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.group-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.group-card h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.group-card p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-shadow: none;
+}
+
+.join-btn {
+  background: linear-gradient(135deg, #64748b, #78909c, #8ba2ac);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(100, 116, 139, 0.25);
+}
+
+.join-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.8s ease;
+}
+
+.join-btn:hover::before {
+  left: 100%;
+}
+
+.join-btn:hover {
+  background: linear-gradient(135deg, #5a6c7d, #6b7d8c, #7c8e9b);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(100, 116, 139, 0.3);
+}
+
+/* === Sophisticated Footer with Muted Gradient === */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(
+    135deg,
+    rgba(51, 65, 85, 0.9) 0%,
+    rgba(71, 85, 105, 0.85) 50%,
+    rgba(100, 116, 139, 0.9) 100%
+  );
+  backdrop-filter: blur(25px) saturate(1.1);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.1);
+  z-index: 15;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+  margin: 0;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section h2 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-section p {
+    font-size: 1.1rem;
+    padding: 0 20px;
+  }
+  
+  .main-content {
+    margin: 0 20px 40px 20px;
+    padding: 30px 20px;
+  }
+  
+  .btn {
+    padding: 14px 28px;
+    font-size: 16px;
+    margin: 10px 5px;
+  }
+  
+  header nav a {
+    margin: 0 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .groups-container {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+  
+  .group-card {
+    padding: 20px;
+  }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Graphics Era Hill University</h1>
+        <nav>
+            <a href="#home" data-nav="home">Home</a>
+            <a href="#about" data-nav="about">About</a>
+            <a href="#programs" data-nav="programs">Programs</a>
+            <a href="#contact" data-nav="contact">Contact</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero-section">
+            <h2>Welcome to Graphics Era Hill University</h2>
+            <p>Discover a world of opportunities at GEHU. We provide quality education with cutting-edge facilities and experienced faculty to help you achieve your career goals and shape your future.</p>
+        </section>
+        
+        <div class="button-links">
+            <a href="#signup" class="btn blue" data-gate="signup">Sign Up Now</a>
+            <a href="#learn" class="btn green" data-gate="learn">Learn More</a>
+        </div>
+        
+        <div class="main-content">
+            <div id="signup">
+                <h2>Join Our Community</h2>
+                <form id="signup-form">
+                    <input type="text" id="name" placeholder="Your Full Name" required>
+                    <input type="email" id="email" placeholder="Your Email Address" required>
+                    <select id="domain" required>
+                        <option value="">Select Your Domain of Interest</option>
+                        <option value="Computer Science">Computer Science & IT</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Business">Business & Management</option>
+                        <option value="Arts">Arts & Humanities</option>
+                        <option value="Science">Pure Sciences</option>
+                        <option value="Research">Research & Development</option>
+                    </select>
+                    <button type="submit">Sign Up Today</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="groups-container">
+            <div class="group-card">
+                <h3>Computer Science Hub</h3>
+                <p>Join our vibrant Computer Science community to discuss latest technology trends, programming challenges, and career opportunities in tech.</p>
+                <button class="join-btn" data-group="Computer Science Hub">Join Group</button>
+            </div>
+            
+            <div class="group-card">
+                <h3>Engineering Network</h3>
+                <p>Connect with fellow engineers, share innovative projects, and collaborate on cutting-edge solutions that shape the future.</p>
+                <button class="join-btn" data-group="Engineering Network">Join Group</button>
+            </div>
+            
+            <div class="group-card">
+                <h3>Business Leaders</h3>
+                <p>Network with aspiring entrepreneurs and business professionals. Share insights, strategies, and build valuable connections.</p>
+                <button class="join-btn" data-group="Business Leaders">Join Group</button>
+            </div>
+            
+            <div class="group-card">
+                <h3>Research Circle</h3>
+                <p>For academics and researchers passionate about pushing boundaries and contributing to knowledge advancement.</p>
+                <button class="join-btn" data-group="Research Circle">Join Group</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2025 Graphics Era Hill University. All Rights Reserved. | Excellence in Education</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
